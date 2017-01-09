@@ -1,0 +1,4 @@
+<!-- feed -->
+<div  class="ui feed">
+  <flux-feed-item *ngFor="let post of posts" [token]="nToken | async" [Item]="post" (form-reply)="relay($event)" ></flux-feed-item>
+</div>

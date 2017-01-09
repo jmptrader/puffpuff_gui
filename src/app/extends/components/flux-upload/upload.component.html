@@ -1,0 +1,15 @@
+<p>Images</p>
+<div [id]="dropId" class="create dropzone needsclick">
+      <span>  10 images max   </span>
+</div>
+
+<!--convert all to observavle-->
+<div  class="ui indicating progress" *ngIf="singleUpload"  id="currentProgress">
+  <div class="bar"></div>
+  <div class="label">{{currentUProgs}}%  {{currentFile}} bug </div>
+</div>
+
+<div class="ui indicating progress" *ngIf="multipleUpload"  id="totalProgress">
+  <div class="bar"></div>
+  <div class="label">{{totalUProgs}}% Total Images</div>
+</div>

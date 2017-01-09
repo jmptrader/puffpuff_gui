@@ -1,0 +1,18 @@
+<div class="ui raised segment">
+  <div class="meta">
+    <a class="like" (click)="clap()">
+      <i class="frown icon"></i> {{ likes | async}} claps
+    </a>
+    <a class="like" (click)="slap()">
+      <i class="smile icon"></i> {{ dislikes | async}} slaps
+    </a>
+    <a class="like" (click)="openModal()">
+      <i class="reply icon"></i> reply
+    </a>
+    <a class="like" *ngIf="routeTo && allowRoute" (click)="route()" >
+      <i class="location arrow icon"></i> {{ views | async}} views
+    </a>
+  </div>
+</div>
+<!--<p> feedId {{id}}</p>-->
+<!--{{item | async | json}}-->

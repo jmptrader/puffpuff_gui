@@ -1,0 +1,56 @@
+<div class="ui segment">
+  <h2 class="ui teal image header">
+    <div class="content">
+      Sign-Up your account
+    </div>
+  </h2>
+  <form class="ui large form">
+    <div class="ui stacked segment">
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="mail icon"></i>
+          <input type="email" [(ngModel)]="userData.email"  name="email" placeholder="E-mail address">
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="user icon"></i>
+          <input type="text" [(ngModel)]="userData.username" name="username" placeholder="Username">
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="user icon"></i>
+          <div class="ui selection dropdown">
+            <input type="hidden" name="selection">
+            <i class="dropdown icon"></i>
+            <div class="default text"> <i class="genderless icon"></i>Gender</div>
+            <div class="menu">
+              <div class="item" data-value="male" (click)="setGender('male')"> <i class="male icon"></i>Male</div>
+              <div class="item" data-value="female" (click)="setGender('female')"><i class="female icon"></i>Female</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="lock icon"></i>
+          <input type="password" [(ngModel)]="userData.password" name="password" placeholder="Password">
+        </div>
+      </div>
+      <div class="ui center field">
+        <div class="ui large teal submit button" (click)="signUp(userData)">
+        <i class="add user icon"></i> Sign Up</div>
+    </div>
+      </div>
+    <div class="ui red message" *ngIf="err.show">
+      {{err.mgs}}
+    </div>
+
+  </form>
+
+  <div class="ui message">
+    familar with us already?
+    <a (click)="change()">Sign In</a>
+  </div>
+</div>

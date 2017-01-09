@@ -1,0 +1,38 @@
+  <div *ngIf="feedItem"  class="event">
+    <!--<div class="label">
+      <img class="ui avatar image"  src="assets/a.jpg">
+    </div>-->
+    <div class="content">
+      <div class="summary">
+        <img class="ui avatar image"  src="assets/a.jpg">
+        <a>{{feedItem?.owner?.username}}</a>
+        <div class="date">
+          4 days ago
+        </div>
+      </div>
+      <div class="ui small images extra images">
+        <a><img *ngFor="let img of getImg(feedItem)" [src]="img"></a>
+      </div>
+      <div class="extra text">
+        {{feedItem?.body}}
+      </div>
+      <flux-feed-info *ngIf="getType()" [showRoute]="getType()" [token]="token" [feed-id]="feedItem?.id"  [feed-base]="feedItem?.id"  ></flux-feed-info>
+      <flux-feed-info *ngIf="!getType()" [showRoute]="getType()" [token]="token" [feed-id]="feedItem?.id"  [feed-base]="feedItem?.base?.id"  ></flux-feed-info>
+    </div>
+  </div>
+
+  <div class="ui long small modal" [id]="feedItem?.id" >
+  <i class="close icon"></i>
+  <div class="header">
+    {{inputLabel}}
+  </div>
+  <div>
+      <flux-create [base]="getReply()" [upload-id]="feedItem?.id" [label]="inputLabel" [singleUpload]="singleUpload" [upload]="upload" (createdValue)="relay($event)" ></flux-create>
+  </div>
+  <div class="actions">
+    <div class="ui red deny right labeled icon button">
+      Cancel
+      <i class="remove icon"></i>
+    </div>
+  </div>
+</div>

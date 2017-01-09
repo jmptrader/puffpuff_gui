@@ -1,0 +1,15 @@
+<div>
+  <form class="ui reply form">
+    <div class="ui label">
+      {{label}}
+      <i class="comment icon"></i>
+    </div>
+    <div class="ui field">
+      <textarea (keyup)="inputChanges($event)"></textarea>
+    </div>
+    <flux-upload *ngIf="upload" [single]="fileUpload" [drop-zone-id]="dropId" [max-files]="fileNo" (uploads)="setUploads($event)"></flux-upload>
+    <div class="ui primary submit labeled icon button" (click)="createItem()">
+      <i class="icon edit"></i> Add {{label}}
+    </div>
+  </form>
+</div>  

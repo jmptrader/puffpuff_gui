@@ -1,0 +1,21 @@
+<div class="ui long basic small modal"  [id]="postCreator">
+  <i class="close icon"></i>
+  <div class="header">
+    {{inputLabel}}
+  </div>
+  <div>
+    <flux-create [upload-id]="postCreator" [label]="inputLabel" [singleUpload]="singleUpload" [upload]="upload" (createdValue)="_coresvc.create($event)"></flux-create>
+  </div>
+  <div class="actions">
+    <div class="ui red deny right labeled icon button">
+      Cancel
+      <i class="remove icon"></i>
+    </div>
+  </div>
+</div>
+<div id="main_feed" style="padding-top: 100px" class="ui justified grid">
+  <div class="ui sticky">
+    <button class="ui circular button" (click)="createPost()">Create Post</button>
+  </div>
+  <flux-feed (item-reply)="_coresvc.create($event)" [post-list]="feed | async"></flux-feed>
+</div>

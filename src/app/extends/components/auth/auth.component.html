@@ -1,0 +1,2 @@
+<flux-auth-login [page-status]="default" [login-callback]="login" (login-Data)="authAction('login',$event)" (change-page)="changeDefault($event)" *ngIf="!default"></flux-auth-login>
+<flux-auth-signup [page-status]="default" [signup-callback]="signUp" (signUp-Data)="authAction('signUp',$event)" (change-page)="changeDefault($event)" *ngIf="default"></flux-auth-signup>
