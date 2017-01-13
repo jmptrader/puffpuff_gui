@@ -1,10 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = 8080
+const port =  process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080
 
 app.use('*.js', (req, res, next) => {
-  console.log(req.url)
   req.url = req.url + '.gz'
   res.setHeader('Content-Encoding', 'gzip')
   next()
@@ -15,7 +14,6 @@ app.use('*.js', (req, res, next) => {
 
 app.get('/', (req, res) => {
   const path = __dirname + '/dist/' + 'index.html'
-  console.log(path)
   res.sendFile(path, {})
 })
 

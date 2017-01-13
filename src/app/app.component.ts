@@ -31,8 +31,8 @@ declare const $;
 })
 export class AppComponent {
     angularclassLogo = 'assets/img/angularclass-avatar.png';
-    name = 'Angular 2 Webpack Starter';
-    url = 'https://twitter.com/AngularClass';
+    name = 'Join The Meal...';
+    url = 'https://www.puffpuff.com.ng';
 
     private user: Observable<any>
     private item: Observable<any>

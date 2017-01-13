@@ -42,7 +42,7 @@
     "server:prod": "http-server dist --cors",
     "server": "npm run server:dev",
     "start:hmr": "npm run server:dev:hmr",
-    "start": "npm run server:dev",
+    "start": "npm run puffpuff",
     "test": "karma start",
     "tslint": "tslint",
     "typedoc": "typedoc",
@@ -56,7 +56,8 @@
     "webdriver:start": "npm run webdriver-manager start",
     "webdriver:update": "npm run webdriver-manager update",
     "webpack-dev-server": "webpack-dev-server",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "puffpuff": "npm run build:prod && node server.js"
   },
   "dependencies": {
     "@angular/common": "2.1.1",
