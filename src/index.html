@@ -15,6 +15,15 @@
       <% } %>
         <!-- base url -->
         <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/g/semantic-ui@2.2.6(components/transition.min.css+components/sticky.min.css+components/segment.min.css+components/shape.min.css+components/search.min.css+components/progress.min.css+components/modal.min.css+components/menu.min.css+components/loader.min.css+components/list.min.css+components/label.min.css+components/item.min.css+components/input.min.css+components/image.min.css+components/icon.min.css+components/grid.min.css+components/form.min.css+components/flag.min.css+components/feed.min.css+components/embed.min.css+components/dropdown.min.css+components/dimmer.min.css+components/comment.min.css+components/container.min.css+components/button.min.css+components/card.min.css)">
+<!--
+        <script src="https://cdn.jsdelivr.net/g/semantic-ui@2.2.6(components/visibility.min.js+components/transition.min.js+components/sticky.min.js+components/search.min.js+components/shape.min.js+components/progress.min.js+components/modal.min.js+components/form.min.js+components/embed.min.js+components/dropdown.min.js+components/dimmer.min.js+components/api.min.js)"></script>-->
+
+        <link rel="icon" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/themes/basic/assets/fonts/icons.eot">
+        <link rel="icon"  href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/themes/basic/assets/fonts/icons.svg">
+        <link rel="icon"  href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/themes/basic/assets/fonts/icons.ttf">
+        <link rel="icon"  href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/themes/basic/assets/fonts/icons.woff">
 </head>
 
 <body>
@@ -23,13 +32,21 @@
   </app>
   <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
   <script>
-    (function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=r;A[l]=A[l]||function(){
-    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=1*new Date();a=n.createElement(g),
-    r=n.getElementsByTagName(g)[0];a.async=1;a.src=u;r.parentNode.insertBefore(a,r)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = r;
+      A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = 1 * new Date();
+      a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0];
+      a.async = 1;
+      a.src = u;
+      r.parentNode.insertBefore(a, r)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-71073175-1', 'auto');
     ga('send', 'pageview');
+
   </script>
   <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
     <!-- Webpack Dev Server reload -->

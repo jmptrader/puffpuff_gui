@@ -6,7 +6,8 @@ const headers = new Headers({
     "postman-token": "e7b074a1-fcf2-152a-b8de-3e6bfda7d8a5"
   });
 export const options = new RequestOptions({ headers: headers });
-export const ApiUrl = 'https://puffpuff-mainframe.herokuapp.com'
+export const domainName = 'puffpuff-mainframe.herokuapp.com'
+export const ApiUrl = 'https://' + domainName
 //'http://localhost:3000'
 
 export * from './auth.service'

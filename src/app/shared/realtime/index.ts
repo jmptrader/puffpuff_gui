@@ -1,7 +1,12 @@
 const Primus = require('./primus')
 
+import { domainName } from './../services'
+
 import { Observable } from 'rxjs/observable'
 import { IWChangeRoom } from './../interfaces'
+
+export const wsUrl = 'ws://' + domainName
+
 export const USER_ROOM_CHANGE = 'user:room:change'
 export const ROOM_GET_USERS = 'room:get:users'
 export const USER_JOIN_ROOM = 'user:join:room'
@@ -13,14 +18,18 @@ export const ROOM_NEW_REPLY = 'room:new:reply'
 export const ROOM_USERS_ALL = 'room:users:all'
 export const USER_CONNECTED = 'user:connected'
 
-export const primus = new Primus('ws://localhost:3000', {})
+// 'ws://localhost:3000'
+
+console.log(wsUrl);
+
+export const primus = new Primus(wsUrl, {})
 
 import { Injectable } from '@angular/core';
 // import { Observable } from 'rxjs'
 
 @Injectable()
 export class PrimusService {
-    public primus = new Primus('ws://localhost:3000', {})
+    public primus = new Primus(wsUrl, {})
     constructor() { }
 
     /**
